@@ -77,18 +77,22 @@ DATABASES = {
     "default": {
         "ENGINE": "djongo",
         "NAME": "octofit_db",
-        "ENFORCE_SCHEMA": False,  # Adicionado para evitar problemas de compatibilidade
+        "ENFORCE_SCHEMA": False,  # Garante compatibilidade com o MongoDB
+        "CLIENT": {
+            "host": "localhost",
+            "port": 27017,
+        },
     }
 }
 
-# Enable CORS
+# Middleware CORS atualizado
 INSTALLED_APPS += ["corsheaders"]
 MIDDLEWARE.insert(0, "corsheaders.middleware.CorsMiddleware")
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_METHODS = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 CORS_ALLOW_HEADERS = ["*",]
 
-# Allow all hosts
+# Permitir todos os hosts
 ALLOWED_HOSTS = ["*"]
 
 
