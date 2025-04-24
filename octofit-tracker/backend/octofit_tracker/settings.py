@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "octofit_tracker",
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,7 @@ DATABASES = {
     "default": {
         "ENGINE": "djongo",
         "NAME": "octofit_db",
+        "ENFORCE_SCHEMA": False,  # Adicionado para evitar problemas de compatibilidade
     }
 }
 
